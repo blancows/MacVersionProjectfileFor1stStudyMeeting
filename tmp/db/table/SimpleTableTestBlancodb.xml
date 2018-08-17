@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<workbook>
+  <sheet>
+    <blancodb-common>
+      <name>SimpleTestBlancodbSelect</name>
+      <package/>
+      <query-type>iterator</query-type>
+      <single>true</single>
+      <scroll>forward_only</scroll>
+      <updatable>false</updatable>
+      <dynamic-sql>false</dynamic-sql>
+      <use-bean-parameter>false</use-bean-parameter>
+      <statementTimeout>-1</statementTimeout>
+    </blancodb-common>
+    <blancodb-query>
+      <query-line>
+        <![CDATA[SELECT COL_ID, COL_TEXT, COL_NUMERIC
+  FROM TEST_BLANCODB
+ WHERE COL_ID = #colId]]>
+      </query-line>
+    </blancodb-query>
+    <blancodb-inparameters>
+      <inparameter>
+        <name>colId</name>
+        <type>INTEGER</type>
+        <nullable>NoNulls</nullable>
+      </inparameter>
+    </blancodb-inparameters>
+  </sheet>
+  <sheet>
+    <blancodb-common>
+      <name>SimpleTestBlancodbSelectAll</name>
+      <package/>
+      <query-type>iterator</query-type>
+      <single>false</single>
+      <scroll>insensitive</scroll>
+      <updatable>false</updatable>
+      <dynamic-sql>false</dynamic-sql>
+      <use-bean-parameter>false</use-bean-parameter>
+      <statementTimeout>-1</statementTimeout>
+    </blancodb-common>
+    <blancodb-query>
+      <query-line>
+        <![CDATA[SELECT COL_ID, COL_TEXT, COL_NUMERIC
+  FROM TEST_BLANCODB
+ ORDER BY COL_ID]]>
+      </query-line>
+    </blancodb-query>
+    <blancodb-inparameters/>
+  </sheet>
+  <sheet>
+    <blancodb-common>
+      <name>SimpleTestBlancodbInsert</name>
+      <package/>
+      <query-type>invoker</query-type>
+      <single>true</single>
+      <dynamic-sql>false</dynamic-sql>
+      <use-bean-parameter>false</use-bean-parameter>
+      <statementTimeout>-1</statementTimeout>
+    </blancodb-common>
+    <blancodb-query>
+      <query-line>
+        <![CDATA[INSERT
+  INTO TEST_BLANCODB
+       (COL_ID, COL_TEXT, COL_NUMERIC)
+VALUES
+       (#colId, #colText, #colNumeric)]]>
+      </query-line>
+    </blancodb-query>
+    <blancodb-inparameters>
+      <inparameter>
+        <name>colId</name>
+        <type>INTEGER</type>
+        <nullable>NoNulls</nullable>
+      </inparameter>
+      <inparameter>
+        <name>colText</name>
+        <type>VARCHAR</type>
+        <nullable>Nullable</nullable>
+      </inparameter>
+      <inparameter>
+        <name>colNumeric</name>
+        <type>VARCHAR</type>
+        <nullable>Nullable</nullable>
+      </inparameter>
+    </blancodb-inparameters>
+  </sheet>
+  <sheet>
+    <blancodb-common>
+      <name>SimpleTestBlancodbInsertNoNulls</name>
+      <package/>
+      <query-type>invoker</query-type>
+      <single>true</single>
+      <dynamic-sql>false</dynamic-sql>
+      <use-bean-parameter>false</use-bean-parameter>
+      <statementTimeout>-1</statementTimeout>
+    </blancodb-common>
+    <blancodb-query>
+      <query-line>
+        <![CDATA[INSERT
+  INTO TEST_BLANCODB
+       (COL_ID)
+VALUES
+       (#colId)]]>
+      </query-line>
+    </blancodb-query>
+    <blancodb-inparameters>
+      <inparameter>
+        <name>colId</name>
+        <type>INTEGER</type>
+        <nullable>NoNulls</nullable>
+      </inparameter>
+    </blancodb-inparameters>
+  </sheet>
+  <sheet>
+    <blancodb-common>
+      <name>SimpleTestBlancodbUpdate</name>
+      <package/>
+      <query-type>invoker</query-type>
+      <single>true</single>
+      <dynamic-sql>false</dynamic-sql>
+      <use-bean-parameter>false</use-bean-parameter>
+      <statementTimeout>-1</statementTimeout>
+    </blancodb-common>
+    <blancodb-query>
+      <query-line>
+        <![CDATA[UPDATE TEST_BLANCODB
+   SET COL_TEXT = #colText, COL_NUMERIC = #colNumeric
+ WHERE COL_ID = #whereColId]]>
+      </query-line>
+    </blancodb-query>
+    <blancodb-inparameters>
+      <inparameter>
+        <name>colText</name>
+        <type>VARCHAR</type>
+        <nullable>Nullable</nullable>
+      </inparameter>
+      <inparameter>
+        <name>colNumeric</name>
+        <type>VARCHAR</type>
+        <nullable>Nullable</nullable>
+      </inparameter>
+      <inparameter>
+        <name>whereColId</name>
+        <type>INTEGER</type>
+        <nullable>NoNulls</nullable>
+      </inparameter>
+    </blancodb-inparameters>
+  </sheet>
+  <sheet>
+    <blancodb-common>
+      <name>SimpleTestBlancodbDelete</name>
+      <package/>
+      <query-type>invoker</query-type>
+      <single>true</single>
+      <dynamic-sql>false</dynamic-sql>
+      <use-bean-parameter>false</use-bean-parameter>
+      <statementTimeout>-1</statementTimeout>
+    </blancodb-common>
+    <blancodb-query>
+      <query-line>
+        <![CDATA[DELETE FROM TEST_BLANCODB
+ WHERE COL_ID = #colId]]>
+      </query-line>
+    </blancodb-query>
+    <blancodb-inparameters>
+      <inparameter>
+        <name>colId</name>
+        <type>INTEGER</type>
+        <nullable>NoNulls</nullable>
+      </inparameter>
+    </blancodb-inparameters>
+  </sheet>
+</workbook>
